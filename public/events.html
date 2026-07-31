@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Eventos</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+  <header class="header">
+    <div class="header__inner">
+      <a class="logo" href="/dashboard.html">TCG Platform</a>
+      <nav class="nav">
+        <button class="btn btn-secondary" onclick="window.location.href='/dashboard.html'">Mi perfil</button>
+        <button class="btn btn-secondary active" onclick="window.location.href='/events.html'">Eventos</button>
+        <button class="btn btn-secondary" onclick="window.location.href='/rewards.html'">Recompensas</button>
+        <button class="btn btn-danger" onclick="logout()">Cerrar sesion</button>
+      </nav>
+    </div>
+  </header>
+
+  <main class="page">
+    <section class="section" style="margin-top:1.5rem;">
+      <h1>Eventos / Torneos</h1>
+
+      <div id="create-event-box" class="card" style="display:none; margin-bottom:1.5rem;">
+        <h2>Crear evento (admin)</h2>
+        <div class="field"><label>Titulo</label><input id="ev-title" type="text"></div>
+        <div class="field"><label>Descripcion</label><input id="ev-description" type="text"></div>
+        <div class="field"><label>Fecha</label><input id="ev-date" type="datetime-local"></div>
+        <div class="field"><label>Plazas</label><input id="ev-max" type="number" value="8"></div>
+        <div class="field"><label>XP por participar</label><input id="ev-participation" type="number" value="10"></div>
+        <div class="field"><label>XP extra por ganar</label><input id="ev-winner" type="number" value="20"></div>
+        <div class="field"><label>XP que se resta por perder</label><input id="ev-loser" type="number" value="5"></div>
+        <div class="field"><label>XP que se resta por no presentarse</label><input id="ev-noshow" type="number" value="10"></div>
+        <button class="btn btn-primary" onclick="createEvent()">Crear evento</button>
+      </div>
+
+      <div id="events-list" class="grid">
+        <p>Cargando...</p>
+      </div>
+
+      <p id="message" class="message"></p>
+    </section>
+  </main>
+
+  <script src="/js/api.js"></script>
+  <script src="/js/events.js"></script>
+</body>
+</html>

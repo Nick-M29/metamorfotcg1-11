@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mi perfil</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+  <header class="header">
+    <div class="header__inner">
+      <a class="logo" href="/dashboard.html">TCG Platform</a>
+      <nav class="nav">
+        <button class="btn btn-secondary active" onclick="window.location.href='/dashboard.html'">Mi perfil</button>
+        <button class="btn btn-secondary" onclick="window.location.href='/events.html'">Eventos</button>
+        <button class="btn btn-secondary" onclick="window.location.href='/rewards.html'">Recompensas</button>
+        <button id="admin-btn" class="btn btn-secondary" style="display:none" onclick="window.location.href='/admin.html'">Admin</button>
+        <button class="btn btn-danger" onclick="logout()">Cerrar sesion</button>
+      </nav>
+    </div>
+  </header>
+
+  <main class="page">
+    <section class="section" style="margin-top:1.5rem;">
+      <h1>Mi perfil</h1>
+      <div id="profile">
+        <p>Cargando...</p>
+      </div>
+    </section>
+  </main>
+
+  <script src="/js/api.js"></script>
+  <script src="/js/dashboard.js"></script>
+</body>
+</html>

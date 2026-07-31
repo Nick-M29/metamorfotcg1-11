@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tienda de recompensas</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+  <header class="header">
+    <div class="header__inner">
+      <a class="logo" href="/dashboard.html">TCG Platform</a>
+      <nav class="nav">
+        <button class="btn btn-secondary" onclick="window.location.href='/dashboard.html'">Mi perfil</button>
+        <button class="btn btn-secondary" onclick="window.location.href='/events.html'">Eventos</button>
+        <button class="btn btn-secondary active" onclick="window.location.href='/rewards.html'">Recompensas</button>
+        <button class="btn btn-danger" onclick="logout()">Cerrar sesion</button>
+      </nav>
+    </div>
+  </header>
+
+  <main class="page">
+    <section class="section" style="margin-top:1.5rem;">
+      <h1>Tienda de recompensas</h1>
+
+      <div id="create-product-box" class="card" style="display:none; margin-bottom:1.5rem;">
+        <h2>Añadir producto (admin)</h2>
+        <div class="field"><label>Nombre</label><input id="pr-name" type="text"></div>
+        <div class="field"><label>TCG</label><select id="pr-tcg"></select></div>
+        <div class="field"><label>Coleccion</label><input id="pr-set" type="text"></div>
+        <div class="field"><label>Rareza</label><input id="pr-rarity" type="text"></div>
+        <div class="field"><label>Precio en XP</label><input id="pr-price" type="number"></div>
+        <div class="field"><label>Stock</label><input id="pr-stock" type="number"></div>
+        <div class="field">
+          <label>Imagen (opcional)</label>
+          <div class="file-field">
+            <input id="pr-image" type="file" accept="image/*">
+          </div>
+        </div>
+        <button class="btn btn-primary" onclick="createProduct()">Crear producto</button>
+      </div>
+
+      <h2>Catalogo</h2>
+      <div id="products-list" class="grid">
+        <p>Cargando...</p>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>Mis canjes</h2>
+      <div id="orders-list">
+        <p>Cargando...</p>
+      </div>
+      <p id="message" class="message"></p>
+    </section>
+  </main>
+
+  <script src="/js/api.js"></script>
+  <script src="/js/rewards.js"></script>
+</body>
+</html>
