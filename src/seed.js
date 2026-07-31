@@ -4,7 +4,7 @@
 //
 // Uso: npm run seed
 
-const bcrypt = require('bcrypt');
+const bcrypt = require('bcryptjs');
 require('dotenv').config();
 
 const pool = require('./config/db');
